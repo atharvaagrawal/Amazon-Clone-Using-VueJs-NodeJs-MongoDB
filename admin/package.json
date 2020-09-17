@@ -14,7 +14,8 @@
     "@nuxtjs/pwa": "^3.0.0-beta.20",
     "bootstrap": "^4.5.0",
     "bootstrap-vue": "^2.15.0",
-    "nuxt": "^2.14.0"
+    "nuxt": "^2.14.0",
+    "vue-star-rating": "^1.6.1"
   },
   "devDependencies": {}
 }

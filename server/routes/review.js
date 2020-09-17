@@ -13,7 +13,7 @@ router.post('/reviews/:productID', [verifyToken, upload.single("photo")], async 
         review.photo = req.file.location;
         review.user = req.decoded._id;
         review.productID = req.params.productID;
-        console.log(review._id,review.productID );
+
 
         await Product.updateOne({
             _id: review.productID},

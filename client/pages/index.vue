@@ -134,7 +134,7 @@
     }) {
       try { 
         let response = await $axios.$get("/api/products");
-        console.log(response.products);
+        
         return {
           products: response.products
         };
