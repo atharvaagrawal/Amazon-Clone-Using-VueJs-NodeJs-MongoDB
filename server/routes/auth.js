@@ -68,43 +68,34 @@ router.put("/auth/user", verifyToken, async (req, res) => {
     try {
         console.log("Hello");
 
-        //console.log(req.decoded._id);
-
-        let foundUser = await User.findOneAndUpdate({
+        let foundUser = await User.findOne({
             _id: req.decoded._id
-        }, {
-            $set: {
-                name: req.body.name,
-                email: req.body.email,
-                password: req.body.password,
+        });
+        if (foundUser) {
+            if (req.body.name) {
+                foundUser.name = req.body.name;
             }
-        });
+            if (req.body.email) {
+                foundUser.email = req.body.email;
+            }
+            if (req.body.password) {
+                foundUser.password = req.body.password;
+            }
+            console.log(foundUser);
 
-        console.log(foundUser);
+            console.log("Here");
 
-        /* if (foundUser) {    
-             if (req.body.name) {
-                 foundUser.name = req.body.name;
-             }
-             if (req.body.email) {
-                 foundUser.email = req.body.email;
-             }
-             if (req.body.password) {
-                 foundUser.password = req.body.password;
-             }
-             console.log(foundUser);
+            await foundUser.save();
 
-             console.log("Here");
+            console.log("I'm Here ")
 
-             await foundUser.save();
+            res.json({
+                success: true,
+                message: "User Updated Successfully",
+                updatedUser: foundUser
+            });
 
-             console.log("I'm Here ")*/
-
-        res.json({
-            success: true,
-            message: "User Updated Successfully",
-            updatedUser: foundUser
-        });
+        }
     } catch (err) {
         res.status(500).json({
             success: false,

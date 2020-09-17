@@ -86,13 +86,18 @@
                 by
                 <a href="#" class="authorName">
                   {{product.owner.name}}
-                  <i
-                    class="fas fa-chevron-down"
-                    style="font-size: 8px !important; color: #555 !important;"
-                  ></i>
+                  <i class="fas fa-chevron-down" style="font-size: 8px !important; color: #555 !important;"></i>
                 </a> (Author)
               </div>
-              <div class="reviewGroup"></div>
+              <div class="reviewGroup">
+
+                <no-ssr>
+                  <star-rating :rating="product.averageRating" :show-rating="false" :glow="1" :border-width="1"
+                    :rounded-corners="true" :read-only="true" :star-size="18"
+                    :star-points="[12,2,14,17,0,19,10,34,7,50,23,43,38,50,36,34,46,19,31,17]"></star-rating>
+                </no-ssr>
+
+              </div>
               <hr style="margin-top: 10px;" />
               <!-- A tags Dummy Data -->
               <div class="mediaMatrix">
@@ -134,11 +139,7 @@
                           <span class="a-button-inner">
                             <a href="#" class="a-button-text">
                               <span>
-                                <img
-                                  src="/img/audibleLogo.png"
-                                  class="img-fluid"
-                                  style="width: 20px;"
-                                />Audible
+                                <img src="/img/audibleLogo.png" class="img-fluid" style="width: 20px;" />Audible
                               </span>
                               <br />
                               <span class="a-color-secondary">-</span>
@@ -342,25 +343,46 @@
             </div>
           </div>
         </div>
+
+        <ReviewSection :product="product" :reviews="reviews" />
+
       </div>
-    </div>
+    </div> 
   </main>
 </template>
 
 
 <script>
-export default {
-  async asyncData({ $axios, params}){
-    try{
-      let response = await $axios.$get(`/api/products/${params.id}`);
-      
-      return{
-        product: response.product
-      };
+  import StarRating from "vue-star-rating";
+  import ReviewSection from "~/components/ReviewSection"
+  export default {
+    components: {
+      ReviewSection,
+      StarRating
+    },
+    async asyncData({
+      $axios,
+      params
+    }) {
+      try {
+        let singleProduct = $axios.$get(`/api/products/${params.id}`);
+        let manyReviews = $axios.$get(`/api/reviews/${params.id}`);
 
-    }catch(err){
-      console.log(err);
-    } 
+        const [productResponse, reviewsResponse] = await Promise.all([
+          singleProduct, manyReviews
+        ]);
+
+console.log(params.id,reviewsResponse);
+        return {
+          product: productResponse.product,
+          reviews: reviewsResponse.reviews
+        };
+
+
+      } catch (err) {
+        console.log(err);
+      }
+    }
   }
-}
-</script> 
+
+</script>

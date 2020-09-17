@@ -42,7 +42,7 @@
                   <i class="fas fa-star"> </i>
                 </a>
                 <span class="a-letter-space"> </span>
-                <span clsss="a-color-tertiary a-size-small asin-reviews">(2155)</span>
+                 <span clsss="a-color-tertiary a-size-small asin-reviews">{{product.rating}}</span>
             </div>
 
             <!-- Product Price -->
@@ -73,11 +73,11 @@ export default {
     try{
       let response = await $axios.$get("http://localhost:3000/api/products");
       return{
-        products: response.products
+        products: response.products 
       }
 
     }catch(err){
-   
+     console.log(err);
     }
 
   },
@@ -85,10 +85,8 @@ export default {
     async onDeleteProduct(id,index) {
       try{
         let  response = await this.$axios.$delete(`http://localhost:3000/api/products/${id}`);
-
-      
+         
          this.products.splice(index, 1);
-        
 
       }catch(err){
           console.log(err);

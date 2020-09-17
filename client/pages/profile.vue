@@ -18,13 +18,13 @@
                             <!-- Email  -->
                             <div class="a-spacing-top-medium">
                                 <label style="margin-bottom: 0px;"> Email </label>
-                                <input type="text" v-model="email" class="a-input-text" style="width: 100%" :placeholder="$auth.$state.user.email"/>
+                                <input type="email" v-model="email" class="a-input-text" style="width: 100%" :placeholder="$auth.$state.user.email"/>
                             </div>
 
                             <!-- Password  -->
                             <div class="a-spacing-top-medium">
                                 <label style="margin-bottom: 0px;"> Password </label>
-                                <input type="text" v-model="password" class="a-input-text" style="width: 100%"/>
+                                <input type="password" v-model="password" class="a-input-text" style="width: 100%"/>
                             </div>
 
                             <!-- Button  -->
