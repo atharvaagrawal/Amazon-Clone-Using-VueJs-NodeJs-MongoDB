@@ -246,7 +246,7 @@
                 </div>
 
                 <div class="a-section">
-                  <div class="a-button-stack">
+                  <div class="a-button-stack" @click="addProductToCart(product)">
                     <span class="a-spacing-small a-button-primary a-button-icon">
                       <span class="a-button-inner">
                         <i class="a-icon a-icon-cart"></i>
@@ -353,6 +353,7 @@
 
 
 <script>
+import {mapActions} from "vuex"
   import StarRating from "vue-star-rating";
   import ReviewSection from "~/components/ReviewSection"
   export default {
@@ -372,7 +373,7 @@
           singleProduct, manyReviews
         ]);
 
-console.log(params.id,reviewsResponse);
+
         return {
           product: productResponse.product,
           reviews: reviewsResponse.reviews
@@ -382,6 +383,9 @@ console.log(params.id,reviewsResponse);
       } catch (err) {
         console.log(err);
       }
+    },
+    methods: {
+      ...mapActions(["addProductToCart"])
     }
   }
 

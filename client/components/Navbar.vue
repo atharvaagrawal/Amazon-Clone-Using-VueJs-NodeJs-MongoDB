@@ -29,8 +29,11 @@
 
                 <div class="nav-sprite" id="nav-packard-glow-loc-icon"> </div>
                 <div id="glow-ingress-block">
-                  <span class="nav-line-1" id="glow-ingress-line1"> Deliver to </span>
-                  <span class="nav-line-2" id="glow-ingress-line2"> India </span>
+                  <span class="nav-line-1" id="glow-ingress-line1">Deliver to</span>
+                  <span class="nav-line-2" id="glow-ingress-line2" v-if="$auth.$state.loggedIn">
+                    {{ $auth.$state.user.address.country }} | {{ $auth.$state.user.address.city }}
+                  </span>
+                  <span class="nav-line-2" id="glow-ingress-line2" v-else>India</span>
                 </div>
               </nuxt-link>
             </div>
@@ -81,14 +84,14 @@
                 <nuxt-link to="/profile" class="nav-a nav-a-2" id="nav-link-accountList" tabindex="0">
                   <span class="nav-line-1"> Hello, </span>
                   <span class="nav-line-2">
-                     {{ $auth.$state.user.name }} 
+                    {{ $auth.$state.user.name }}
                   </span>
                 </nuxt-link>
               </template>
 
               <template v-else>
                 <nuxt-link to="/signup" class="nav-a nav-a-2" id="nav-link-accountList" tabindex="0">
-                  <span class="nav-line-1"> Hello, Sign in </span> 
+                  <span class="nav-line-1"> Hello, Sign in </span>
                   <span class="nav-line-2">
                     Account &amp; Lists
                     <span class="nav-icon nav-arrow" style="visibility: visible"></span>
@@ -105,7 +108,8 @@
                 <span aria-hidden="true" class="nav-line-1"></span>
                 <span aria-hidden="true" class="nav-line-2"> Cart </span>
                 <span class="nav-cart-icon nav-sprite"></span>
-                <span id="nav-cart-count" aria-hidden="true" class="nav-cart-count nav-cart-0"> 0 </span>
+                <span id="nav-cart-count" aria-hidden="true" class="nav-cart-count nav-cart-0"> {{getCartLength}}
+                </span>
               </nuxt-link>
             </div>
           </div>
@@ -117,9 +121,17 @@
 </template>
 
 <script>
+  import {
+    mapGetters
+  } from "vuex";
   import Search from '~/components/Search';
   export default {
-    Search
+    components: {
+      Search
+    },
+    computed: {
+      ...mapGetters(["getCartLength"])
+    }
   }
 
 </script>

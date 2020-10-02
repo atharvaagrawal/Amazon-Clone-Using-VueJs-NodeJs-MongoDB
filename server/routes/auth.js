@@ -46,7 +46,7 @@ router.get("/auth/user", verifyToken, async (req, res) => {
     try {
         let foundUser = await User.findOne({
             _id: req.decoded._id
-        });
+        }).populate("address");
 
         if (foundUser) {
             res.json({
@@ -66,8 +66,6 @@ router.get("/auth/user", verifyToken, async (req, res) => {
 router.put("/auth/user", verifyToken, async (req, res) => {
 
     try {
-        console.log("Hello");
-
         let foundUser = await User.findOne({
             _id: req.decoded._id
         });
@@ -81,13 +79,8 @@ router.put("/auth/user", verifyToken, async (req, res) => {
             if (req.body.password) {
                 foundUser.password = req.body.password;
             }
-            console.log(foundUser);
-
-            console.log("Here");
-
+           
             await foundUser.save();
-
-            console.log("I'm Here ")
 
             res.json({
                 success: true,
