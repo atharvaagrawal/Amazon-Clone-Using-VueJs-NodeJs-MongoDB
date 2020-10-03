@@ -1,7 +1,7 @@
-# Amazon Clone using VUE nuxt.js & NodeJS
+# Amazon Clone using VueJS, NodeJS & MongoDB
 ***
 ## Introduction
-This project is an Analysis of Diploma Final Year Result of MSBTE to take admissioin in Direct Second Year Engineering. The Website is created using `Django`. The project is basically has extracted data from PDF using `camelot` library of python and web-scrapping from website using `bs4` library of python. The data is stored on `MySQL` Database. 
+This Project is Amazon Clone create using VueJS, NodeJS and MongoDB. For searching used Algolia Search and For Payment Gateway used Stripe.
 
 ***
 ## Versions
@@ -21,7 +21,7 @@ This project is an Analysis of Diploma Final Year Result of MSBTE to take admiss
 ***
 ## Output Images:
  
-[![](http://img.youtube.com/vi/Bv_hYmm1AKA/0.jpg)](http://www.youtube.com/watch?v=Bv_hYmm1AKA " Amazon Clone Using VueJs NodeJs and MongoDB")
+[![](http://img.youtube.com/vi/V73p7DJKNHk/0.jpg)](http://www.youtube.com/watch?v=V73p7DJKNHk "Amazon Clone Using VueJS, NodeJS and MongoDB")
 
 Home Page: 
 ![](https://raw.githubusercontent.com/atharvaagrawal/Amazon-Clone-Using-VueJs-NodeJs-MongoDB/master/images/1-HomePage.png)
