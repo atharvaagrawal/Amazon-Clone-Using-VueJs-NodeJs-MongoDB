@@ -21,6 +21,8 @@ This project is an Analysis of Diploma Final Year Result of MSBTE to take admiss
 ***
 ## Output Images:
  
-1) Home Page: 
-![](https://raw.githubusercontent.com/atharvaagrawal/Amazon-Clone-using-vue-nuxt.js-node/master/images/1-HomePage.png)
+[![](http://img.youtube.com/vi/Bv_hYmm1AKA/0.jpg)](http://www.youtube.com/watch?v=Bv_hYmm1AKA " Amazon Clone Using VueJs NodeJs and MongoDB")
+
+Home Page: 
+![](https://raw.githubusercontent.com/atharvaagrawal/Amazon-Clone-Using-VueJs-NodeJs-MongoDB/master/images/1-HomePage.png)
 
