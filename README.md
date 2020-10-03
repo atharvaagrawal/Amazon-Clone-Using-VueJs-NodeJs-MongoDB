@@ -1,5 +1,8 @@
 # Amazon Clone using VueJS, NodeJS & MongoDB
 ***
+## Project Working Youtube Video
+[![](http://img.youtube.com/vi/V73p7DJKNHk/0.jpg)](http://www.youtube.com/watch?v=V73p7DJKNHk "Amazon Clone Using VueJS, NodeJS and MongoDB")
+
 ## Introduction
 This Project is Amazon Clone create using VueJS, NodeJS and MongoDB. For searching used Algolia Search and For Payment Gateway used Stripe.
 
@@ -20,8 +23,6 @@ This Project is Amazon Clone create using VueJS, NodeJS and MongoDB. For searchi
 
 ***
 ## Output Images:
- 
-[![](http://img.youtube.com/vi/V73p7DJKNHk/0.jpg)](http://www.youtube.com/watch?v=V73p7DJKNHk "Amazon Clone Using VueJS, NodeJS and MongoDB")
 
 Home Page: 
 ![](https://raw.githubusercontent.com/atharvaagrawal/Amazon-Clone-Using-VueJs-NodeJs-MongoDB/master/images/1-HomePage.png)
