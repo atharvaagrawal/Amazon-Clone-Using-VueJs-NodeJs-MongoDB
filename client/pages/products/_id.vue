@@ -269,8 +269,8 @@
                   <div class="a-spacing-top-small">
                     <div class="a-section a-spacing-none">
                       <div class="a-section a-spacing-none a-spacing-top-mini">
-                        This item shipts to
-                        <b>California</b>
+                        This item ships to
+                        <b>Dhule</b>
                         <b>Get it by Monday, Sept 23 - Monday, Sept. 30</b>
                         Choose this date at checkout
                       </div>
@@ -297,7 +297,7 @@
                       </form>
                     </div>
                     <div class="float-right">
-                      <span class="a-color-base offer-price a-text-normal">$39</span>
+                      <span class="a-color-base offer-price a-text-normal">₹39</span>
                     </div>
                   </div>
                 </div>
